@@ -93,6 +93,40 @@ bootWar {
         cas {
             from "org.apereo.cas:cas-server-webapp${project.appServer}:${casServerVersion}@war"
             provided = false
+            excludes = [
+                    'WEB-INF/lib/xstream-1.4.14.jar',
+                    'WEB-INF/lib/shiro-cache-1.7.0.jar',
+                    'WEB-INF/lib/shiro-config-core-1.7.0.jar',
+                    'WEB-INF/lib/shiro-config-ogdl-1.7.0.jar',
+                    'WEB-INF/lib/shiro-core-1.7.0.jar',
+                    'WEB-INF/lib/shiro-crypto-cipher-1.7.0.jar',
+                    'WEB-INF/lib/shiro-crypto-core-1.7.0.jar',
+                    'WEB-INF/lib/shiro-crypto-hash-1.7.0.jar',
+                    'WEB-INF/lib/shiro-event-1.7.0.jar',
+                    'WEB-INF/lib/shiro-lang-1.7.0.jar',
+                    'WEB-INF/lib/hystrix-core-1.4.3.jar',
+                    'WEB-INF/lib/h2-1.4.197.jar',
+                    'WEB-INF/lib/netty-codec-http-4.0.27.Final.jar',
+                    'WEB-INF/lib/netty-transport-4.1.52.Final.jar',
+                    'WEB-INF/lib/netty-transport-native-epoll-4.1.52.Final.jar',
+
+                    'WEB-INF/lib/netty-buffer-4.1.52.Final.jar',
+                    'WEB-INF/lib/netty-codec-4.1.52.Final.jar',
+                    'WEB-INF/lib/netty-common-4.1.52.Final.jar',
+                    'WEB-INF/lib/netty-handler-4.1.52.Final.jar',
+                    'WEB-INF/lib/netty-resolver-4.1.52.Final.jar',
+                    'WEB-INF/lib/netty-transport-native-epoll-4.1.52.Final-linux-x86_64.jar',
+                    'WEB-INF/lib/netty-transport-native-kqueue-4.1.52.Final-osx-x86_64.jar',
+                    'WEB-INF/lib/netty-transport-native-unix-common-4.1.52.Final.jar',
+            ]
+
+//            excludes = [
+//                    'WEB-INF/lib/classmate-1.3.4.jar',
+//                    'WEB-INF/lib/commons-codec-1.14.jar',
+//                    'WEB-INF/lib/commons-lang3-3.10.jar',
+//                    'WEB-INF/lib/commons-pool2-2.8.1.jar',
+//                    'WEB-INF/lib/content-type-2.0.jar',
+//            ]
             /*
             excludes = ["WEB-INF/lib/somejar-1.0*"]
             enableCompilation = true

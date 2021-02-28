@@ -23,6 +23,7 @@ buildscript {
         classpath "gradle.plugin.com.google.cloud.tools:jib-gradle-plugin:${project.jibVersion}"
         classpath "io.freefair.gradle:maven-plugin:${project.gradleMavenPluginVersion}"
         classpath "io.freefair.gradle:lombok-plugin:${project.gradleLombokPluginVersion}"
+        classpath 'org.owasp:dependency-check-gradle:6.1.1'
     }
 }
 
@@ -53,7 +54,12 @@ repositories {
 }
 
 def casServerVersion = project.'cas.version'
-def casWebApplicationBinaryName = "cas.war"
+
+project.group = 'gov.noaa.ncei.cmg'
+project.version = casServerVersion + '.' + project.'ncei.version'
+
+def casWebApplicationBinaryBaseName = project.name + "-" + project.version
+def casWebApplicationBinaryName = casWebApplicationBinaryBaseName + '-exe.war'
 
 project.ext."casServerVersion" = casServerVersion
 project.ext."casWebApplicationBinaryName" = casWebApplicationBinaryName
@@ -69,6 +75,10 @@ apply plugin: "idea"
 apply from: rootProject.file("gradle/springboot.gradle")
 apply from: rootProject.file("gradle/dockerjib.gradle")
 
+apply plugin: 'distribution'
+apply plugin: 'maven-publish'
+apply plugin: 'org.owasp.dependencycheck'
+
 dependencies {
     // Add modules in format compatible with overlay casModules property
     if (project.hasProperty("casModules")) {
@@ -82,6 +92,51 @@ dependencies {
     }
     // CAS dependencies/modules may be listed here statically...
     implementation "org.apereo.cas:cas-server-webapp-init:${casServerVersion}"
+    implementation "org.apereo.cas:cas-server-support-eureka-client:${casServerVersion}"
+    implementation "org.apereo.cas:cas-server-support-jpa-ticket-registry:${casServerVersion}"
+    implementation "org.apereo.cas:cas-server-support-git-service-registry:${casServerVersion}"
+    implementation "org.apereo.cas:cas-server-support-jdbc:${casServerVersion}"
+    implementation "org.apereo.cas:cas-server-support-jdbc-drivers:${casServerVersion}"
+    implementation "org.apereo.cas:cas-server-support-ldap:${casServerVersion}"
+    implementation "org.apereo.cas:cas-server-support-oidc:${casServerVersion}"
+
+//    Security vulnerability updates
+    implementation group: 'io.netty', name: 'netty-transport', version: '4.1.59.Final'
+    implementation group: 'io.netty', name: 'netty-codec-http', version: '4.1.59.Final'
+    implementation group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.59.Final'
+    implementation group: 'io.netty', name: 'netty-buffer', version: '4.1.59.Final'
+    implementation group: 'io.netty', name: 'netty-codec', version: '4.1.59.Final'
+    implementation group: 'io.netty', name: 'netty-common', version: '4.1.59.Final'
+    implementation group: 'io.netty', name: 'netty-handler', version: '4.1.59.Final'
+    implementation group: 'io.netty', name: 'netty-resolver', version: '4.1.59.Final'
+    implementation group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.59.Final', classifier: 'linux-x86_64'
+    implementation group: 'io.netty', name: 'netty-transport-native-kqueue', version: '4.1.59.Final', classifier: 'osx-x86_64'
+    implementation group: 'io.netty', name: 'netty-transport-native-unix-common', version: '4.1.59.Final'
+
+
+    implementation group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.15'
+    implementation group: 'com.netflix.hystrix', name: 'hystrix-core', version: '1.4.26'
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+    implementation group: 'org.apache.shiro', name: 'shiro-cache', version: '1.7.1'
+    implementation group: 'org.apache.shiro', name: 'shiro-config-core', version: '1.7.1'
+    implementation group: 'org.apache.shiro', name: 'shiro-config-ogdl', version: '1.7.1'
+    implementation group: 'org.apache.shiro', name: 'shiro-core', version: '1.7.1'
+    implementation group: 'org.apache.shiro', name: 'shiro-crypto-cipher', version: '1.7.1'
+    implementation group: 'org.apache.shiro', name: 'shiro-crypto-core', version: '1.7.1'
+    implementation group: 'org.apache.shiro', name: 'shiro-crypto-hash', version: '1.7.1'
+    implementation group: 'org.apache.shiro', name: 'shiro-event', version: '1.7.1'
+    implementation group: 'org.apache.shiro', name: 'shiro-lang', version: '1.7.1'
+
+
+
+//    shiro-config-core-1.7.0.jar
+//    shiro-config-ogdl-1.7.0.jar
+//    shiro-crypto-cipher-1.7.0.jar
+//    shiro-crypto-core-1.7.0.jar
+//    shiro-crypto-hash-1.7.0.jar
+
+
+
 }
 
 tasks.findByName("jibDockerBuild")
@@ -119,3 +174,96 @@ idea {
         downloadSources = true
     }
 }
+
+distTar {
+    compression = Compression.GZIP
+    archiveExtension = "tar.gz"
+}
+
+distributions {
+    main {
+        distributionBaseName = casWebApplicationBinaryBaseName
+        contents {
+            into('') {
+                File.createTempDir().with {
+                    def tmpLog = new File(absolutePath, 'log')
+                    println tmpLog.absolutePath
+                    tmpLog.mkdirs()
+                    from (absolutePath) {
+                        includeEmptyDirs = true
+                    }
+                }
+            }
+            into('svc/') {
+                from 'dist/svc'
+                include '*.properties'
+                fileMode = 0660
+            }
+            into('svc/') {
+                from 'dist/svc'
+                include '**/*.service'
+                fileMode = 0440
+            }
+            into('svc/') {
+                from 'dist/svc'
+                include '*.sh'
+                fileMode = 0550
+            }
+            into('doc/') {
+                from 'dist/doc'
+                include '*.md'
+                fileMode = 0440
+            }
+            into('config/') {
+                from 'dist/config'
+                include '*.properties'
+                include '*.options'
+                include '*.xml'
+                fileMode = 0660
+            }
+            into('') {
+                from 'dist'
+                include '*.sh'
+                fileMode = 0550
+            }
+            into('') {
+                from 'build/libs/' + casWebApplicationBinaryName
+            }
+        }
+    }
+}
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact(distZip) {
+                extension "zip"
+            }
+            artifact(distTar) {
+                extension "tar.gz"
+            }
+            artifact(distTar) {
+                extension "war"
+                classifier "exe"
+            }
+        }
+    }
+}
+
+processResources {
+    with copySpec {
+        into('docker') {
+            from 'docker'
+            filter org.apache.tools.ant.filters.ReplaceTokens, tokens: [
+                    finalName: casWebApplicationBinaryBaseName
+            ]
+        }
+    }
+}
+
+dependencyCheck {
+    failBuildOnCVSS=0
+    suppressionFile='owasp-dep-check-suppression.xml'
+}
+
