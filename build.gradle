@@ -182,7 +182,7 @@ distTar {
 
 distributions {
     main {
-        distributionBaseName = casWebApplicationBinaryBaseName
+        distributionBaseName = 'cas'
         contents {
             into('') {
                 File.createTempDir().with {
