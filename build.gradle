@@ -249,6 +249,15 @@ publishing {
             }
         }
     }
+    repositories {
+        maven {
+            credentials {
+                username "${publishUser}"
+                password "${publishPassword}"
+            }
+            url = version.endsWith('SNAPSHOT') ? "${publishSnapshotUrl}" : "${publishReleaseUrl}"
+        }
+    }
 }
 
 processResources {
