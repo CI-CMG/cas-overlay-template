@@ -58,4 +58,4 @@ set_java_opts "$SVC_HOME/config/jvm.options"
 set_exe_jar "$SVC_HOME"
 
 cd "$SVC_HOME"
-"$JAVA" "${JAVA_OPTS[@]}" -jar "$EXE_JAR"
+"$JAVA" "${JAVA_OPTS[@]}" -Dsvc.home="$SVC_HOME" -jar "$EXE_JAR"
