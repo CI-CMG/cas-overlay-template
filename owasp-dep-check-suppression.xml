@@ -154,4 +154,73 @@
     <packageUrl regex="true">^pkg:maven/io\.netty/netty\-resolver@.*$</packageUrl>
     <cve>CVE-2021-21290</cve>
   </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: bcprov-jdk15on-1.66.jar
+   Updated to 1.67
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.bouncycastle/bcprov\-jdk15on@.*$</packageUrl>
+    <cve>CVE-2020-28052</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: spring-security-config-5.4.5.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.springframework\.security/spring\-security\-config@.*$</packageUrl>
+    <cve>CVE-2018-1258</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: spring-security-core-5.4.2.jar
+   Updated to 5.4.5
+   ]]></notes>
+    <sha1>cae0310c1de450a6e4a7fbc7d01702bf81d7390d</sha1>
+    <cve>CVE-2021-22112</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: spring-security-web-5.4.2.jar
+   ]]></notes>
+    <sha1>397b4d52b0bd9e7219789630ac3836cce7557c44</sha1>
+    <cve>CVE-2018-1258</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: spring-security-web-5.4.2.jar
+   Updated to 5.4.5
+   ]]></notes>
+    <sha1>397b4d52b0bd9e7219789630ac3836cce7557c44</sha1>
+    <cve>CVE-2021-22112</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: spring-security-cas-5.4.2.jar
+   Updated to 5.4.5
+   ]]></notes>
+    <sha1>23e13365b94b00e18ce985ca434cd9ff84eae9e3</sha1>
+    <cve>CVE-2021-22112</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: spring-security-crypto-5.4.2.jar
+   ]]></notes>
+    <sha1>fb0068bdc52ab40bf381b9065f4a6929bd1d8271</sha1>
+    <cve>CVE-2018-1258</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: spring-security-crypto-5.4.2.jar
+   Updated to 5.4.5
+   ]]></notes>
+    <sha1>fb0068bdc52ab40bf381b9065f4a6929bd1d8271</sha1>
+    <cve>CVE-2021-22112</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: spring-security-config-5.4.2.jar
+   Updated to 5.4.5
+   ]]></notes>
+    <sha1>b3e9919e915aa4f7751b3aba56e4361c909a0ed3</sha1>
+    <cve>CVE-2021-22112</cve>
+  </suppress>
 </suppressions>

@@ -118,6 +118,12 @@ bootWar {
                     'WEB-INF/lib/netty-transport-native-epoll-4.1.52.Final-linux-x86_64.jar',
                     'WEB-INF/lib/netty-transport-native-kqueue-4.1.52.Final-osx-x86_64.jar',
                     'WEB-INF/lib/netty-transport-native-unix-common-4.1.52.Final.jar',
+
+                    'WEB-INF/lib/spring-security-core-5.4.2.jar',
+                    'WEB-INF/lib/spring-security-cas-5.4.2.jar',
+                    'WEB-INF/lib/spring-security-config-5.4.2.jar',
+                    'WEB-INF/lib/spring-security-crypto-5.4.2.jar',
+                    'WEB-INF/lib/spring-security-web-5.4.2.jar',
             ]
 
 //            excludes = [

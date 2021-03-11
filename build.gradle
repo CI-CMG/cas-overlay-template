@@ -102,6 +102,11 @@ dependencies {
     implementation "org.apereo.cas:cas-server-support-configuration-cloud-kafka:${casServerVersion}"
 
 //    Security vulnerability updates
+    implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.4.5'
+    implementation group: 'org.springframework.security', name: 'spring-security-cas', version: '5.4.5'
+    implementation group: 'org.springframework.security', name: 'spring-security-config', version: '5.4.5'
+    implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.4.5'
+    implementation group: 'org.springframework.security', name: 'spring-security-web', version: '5.4.5'
     implementation group: 'io.netty', name: 'netty-transport', version: '4.1.59.Final'
     implementation group: 'io.netty', name: 'netty-codec-http', version: '4.1.59.Final'
     implementation group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.59.Final'
