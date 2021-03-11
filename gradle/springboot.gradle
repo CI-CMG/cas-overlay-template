@@ -124,6 +124,9 @@ bootWar {
                     'WEB-INF/lib/spring-security-config-5.4.2.jar',
                     'WEB-INF/lib/spring-security-crypto-5.4.2.jar',
                     'WEB-INF/lib/spring-security-web-5.4.2.jar',
+
+                    'WEB-INF/lib/spring-integration-jmx-5.3.2.RELEASE.jar',
+                    'WEB-INF/lib/spring-integration-kafka-3.2.1.RELEASE.jar',
             ]
 
 //            excludes = [
