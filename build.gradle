@@ -99,13 +99,21 @@ dependencies {
     implementation "org.apereo.cas:cas-server-support-jdbc-drivers:${casServerVersion}"
     implementation "org.apereo.cas:cas-server-support-ldap:${casServerVersion}"
     implementation "org.apereo.cas:cas-server-support-oidc:${casServerVersion}"
-//    implementation "org.apereo.cas:cas-server-support-configuration-cloud-kafka:${casServerVersion}"
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-kafka', version: '2.2.3.RELEASE'
+    implementation "org.apereo.cas:cas-server-support-configuration-cloud-kafka:${casServerVersion}"
+//    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-kafka', version: '2.2.3.RELEASE'
 
 
 //    Fix Version Conflicts
-//    implementation group: 'org.springframework.integration', name: 'spring-integration-kafka', version: '5.4.1'
-//    implementation group: 'org.springframework.integration', name: 'spring-integration-jmx', version: '5.4.1'
+    implementation('org.springframework.integration:spring-integration-core') {
+        version {
+            strictly '5.3.6.RELEASE'
+        }
+    }
+    implementation('org.springframework.integration:spring-integration-amqp') {
+        version {
+            strictly '5.3.6.RELEASE'
+        }
+    }
 
 //    Security vulnerability updates
     implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.4.5'

@@ -125,6 +125,14 @@ bootWar {
                     'WEB-INF/lib/spring-security-crypto-5.4.2.jar',
                     'WEB-INF/lib/spring-security-web-5.4.2.jar',
 
+                    'WEB-INF/lib/spring-aop-5.2.12.RELEASE.jar',
+                    'WEB-INF/lib/spring-beans-5.2.12.RELEASE.jar',
+                    'WEB-INF/lib/spring-context-5.2.12.RELEASE.jar',
+                    'WEB-INF/lib/spring-core-5.2.12.RELEASE.jar',
+                    'WEB-INF/lib/spring-expression-5.2.12.RELEASE.jar',
+                    'WEB-INF/lib/spring-jcl-5.2.12.RELEASE.jar',
+                    'WEB-INF/lib/spring-web-5.2.12.RELEASE.jar',
+
 //                    'WEB-INF/lib/spring-integration-jmx-5.3.2.RELEASE.jar',
 //                    'WEB-INF/lib/spring-integration-kafka-3.2.1.RELEASE.jar',
             ]
