@@ -100,7 +100,7 @@ dependencies {
     implementation "org.apereo.cas:cas-server-support-ldap:${casServerVersion}"
     implementation "org.apereo.cas:cas-server-support-oidc:${casServerVersion}"
     implementation "org.apereo.cas:cas-server-support-configuration-cloud-kafka:${casServerVersion}"
-//    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-kafka', version: '2.2.3.RELEASE'
+    implementation "gov.noaa.ncei.cmg.cas:cas-server-support-discovery-rest-authentication:${casServerVersion}.1-SNAPSHOT"
 
 
 //    Fix Version Conflicts
