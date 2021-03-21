@@ -4,18 +4,18 @@ buildscript {
         gradlePluginPortal()
         mavenCentral()
         jcenter()
-        maven { 
-            url "https://repo.spring.io/libs-milestone" 
-            mavenContent { releasesOnly() }
-        }
-        maven { 
-            url "https://repo.spring.io/libs-snapshot" 
-            mavenContent { snapshotsOnly() }
-        }
-        maven { 
-            url "https://plugins.gradle.org/m2/" 
-            mavenContent { releasesOnly() }
-        }
+//        maven {
+//            url "https://repo.spring.io/libs-milestone"
+//            mavenContent { releasesOnly() }
+//        }
+//        maven {
+//            url "https://repo.spring.io/libs-snapshot"
+//            mavenContent { snapshotsOnly() }
+//        }
+//        maven {
+//            url "https://plugins.gradle.org/m2/"
+//            mavenContent { releasesOnly() }
+//        }
     }
     dependencies {
         classpath "de.undercouch:gradle-download-task:${project.gradleDownloadTaskVersion}"
@@ -24,33 +24,44 @@ buildscript {
         classpath "io.freefair.gradle:maven-plugin:${project.gradleMavenPluginVersion}"
         classpath "io.freefair.gradle:lombok-plugin:${project.gradleLombokPluginVersion}"
         classpath 'org.owasp:dependency-check-gradle:6.1.1'
+        classpath 'net.saliman:gradle-properties-plugin:1.5.1'
     }
 }
+
+apply plugin: 'net.saliman.properties'
 
 repositories {
     mavenLocal()
     mavenCentral()
     jcenter()
-    maven { 
-        url "https://oss.sonatype.org/content/repositories/snapshots" 
-        mavenContent { snapshotsOnly() }
-    }
-    maven { 
+    maven {
         mavenContent { releasesOnly() }
-        url "https://build.shibboleth.net/nexus/content/repositories/releases/" 
+        url "${privateMavenRepoRelease}"
     }
-    maven { 
-        mavenContent { releasesOnly() }
-        url "https://repo.spring.io/milestone/" 
-    }
-    maven { 
-        url "https://repo.spring.io/snapshot/" 
+    maven {
+        url "${privateMavenRepoSnapshot}"
         mavenContent { snapshotsOnly() }
     }
-    maven { 
-        mavenContent { snapshotsOnly() }
-        url "https://oss.jfrog.org/artifactory/oss-snapshot-local" 
-    }
+//    maven {
+//        url "https://oss.sonatype.org/content/repositories/snapshots"
+//        mavenContent { snapshotsOnly() }
+//    }
+//    maven {
+//        mavenContent { releasesOnly() }
+//        url "https://build.shibboleth.net/nexus/content/repositories/releases/"
+//    }
+//    maven {
+//        mavenContent { releasesOnly() }
+//        url "https://repo.spring.io/milestone/"
+//    }
+//    maven {
+//        url "https://repo.spring.io/snapshot/"
+//        mavenContent { snapshotsOnly() }
+//    }
+//    maven {
+//        mavenContent { snapshotsOnly() }
+//        url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
+//    }
 }
 
 def casServerVersion = project.'cas.version'
