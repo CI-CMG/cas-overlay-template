@@ -29,7 +29,7 @@
   </Appenders>
 
   <Loggers>
-    <Logger name="org.apereo.cas" level="info">
+    <Logger name="org.apereo.cas" level="info" additivity="false">
       <AppenderRef ref="File"/>
     </Logger>
     <Root level="warn">
