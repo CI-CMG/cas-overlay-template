@@ -223,4 +223,179 @@
     <sha1>b3e9919e915aa4f7751b3aba56e4361c909a0ed3</sha1>
     <cve>CVE-2021-22112</cve>
   </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2013-7285</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2016-3674</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2017-7957</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2020-26217</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2020-26258</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2020-26259</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21341</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21342</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21343</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21344</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21345</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21346</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21347</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21348</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21349</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21350</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: mxparser-1.2.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.github\.x\-stream/mxparser@.*$</packageUrl>
+    <cve>CVE-2021-21351</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: netty-transport-native-unix-common-4.1.52.Final.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.netty/netty\-transport\-native\-unix\-common@.*$</packageUrl>
+    <cve>CVE-2021-21295</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: netty-transport-native-kqueue-4.1.52.Final-osx-x86_64.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.netty/netty\-transport\-native\-kqueue@.*$</packageUrl>
+    <cve>CVE-2021-21295</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: netty-transport-native-epoll-4.1.52.Final-linux-x86_64.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.netty/netty\-transport\-native\-epoll@.*$</packageUrl>
+    <cve>CVE-2021-21295</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: netty-codec-4.1.52.Final.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.netty/netty\-codec@.*$</packageUrl>
+    <cve>CVE-2021-21295</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: netty-buffer-4.1.52.Final.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.netty/netty\-buffer@.*$</packageUrl>
+    <cve>CVE-2021-21295</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: netty-common-4.1.52.Final.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.netty/netty\-common@.*$</packageUrl>
+    <cve>CVE-2021-21295</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: netty-handler-4.1.52.Final.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.netty/netty\-handler@.*$</packageUrl>
+    <cve>CVE-2021-21295</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: netty-resolver-4.1.52.Final.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.netty/netty\-resolver@.*$</packageUrl>
+    <cve>CVE-2021-21295</cve>
+  </suppress>
 </suppressions>
