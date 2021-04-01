@@ -113,7 +113,7 @@ dependencies {
     implementation "org.apereo.cas:cas-server-support-oidc:${casServerVersion}"
 //    implementation "org.apereo.cas:cas-server-support-configuration-cloud-kafka:${casServerVersion}"
     implementation "org.apereo.cas:cas-server-support-rest-authentication:${casServerVersion}"
-    implementation "gov.noaa.ncei.cmg.cas:cas-server-support-discovery-rest-authentication:master-SNAPSHOT"
+    implementation "gov.noaa.ncei.cmg.cas:cas-server-support-discovery-rest-authentication:${casServerVersion}.2"
     implementation "gov.noaa.ncei.cmg.cas:cas-server-support-custom-filter:${casServerVersion}.1"
 
 
